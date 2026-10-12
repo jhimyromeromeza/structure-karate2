@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>pe.edu.upc</groupId>
+    <artifactId>Karate2</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>25</maven.compiler.source>
+        <maven.compiler.target>25</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <!-- Karate Core 2.1.2 -->
+        <dependency>
+            <groupId>io.karatelabs</groupId>
+            <artifactId>karate-core</artifactId>
+            <version>2.1.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- JUnit 5 (API, Engine y Platform Engine indispensables) -->
+        <!-- Source: https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.14.4</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+    <build>
+        <testResources>
+            <testResource>
+                <directory>src/test/java</directory>
+                <includes>
+                    <include>**/*.feature</include>
+                    <include>**/*.json</include>
+                    <include>**/*.js</include>
+                    <include>**/*.xml</include>
+                </includes>
+            </testResource>
+        </testResources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.6.0</version>
+                <configuration>
+                    <includes>
+                        <!-- Incluye archivos que terminen en Test.java o Runner.java -->
+                        <include>**/*Test.java</include>
+                        <include>**/*Runner.java</include>
+                    </includes>
+                </configuration>
+
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.16.0</version>
+                <configuration>
+                    <release>25</release>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

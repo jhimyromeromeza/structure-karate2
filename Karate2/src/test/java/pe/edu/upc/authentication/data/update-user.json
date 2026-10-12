@@ -1,0 +1,19 @@
+{
+  "id": 1,
+  "name": "Juan Perez Actualizado",
+  "username": "jperez_updated",
+  "email": "juan.perez.updated@upc.edu.pe",
+  "address": {
+    "street": "Av. Primavera",
+    "suite": "Suite 404",
+    "city": "Lima",
+    "zipcode": "15023"
+  },
+  "phone": "999-888-777",
+  "website": "upc.edu.pe",
+  "company": {
+    "name": "UPC Tech",
+    "catchPhrase": "Innovación educativa",
+    "bs": "education tech"
+  }
+}
